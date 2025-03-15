@@ -16,3 +16,20 @@ for i in range(5):
 promedio = sum / 5 
 print("Suma:", sum)  
 print("Promedio:", promedio)  
+
+# crear una funcion que  reciba un numero  y retorne  si es primo o no 
+
+def veri(num):
+    if num <= 1:
+        return False 
+    i = 2
+    while i * i <= num: 
+        if num % i == 0:
+            return False  
+        i += 1 
+    return True  
+num = int(input("Ingresa un número: "))
+if veri(num):
+    print( "es primo" ,num )
+else:
+    print(" no es primo" ,num )
