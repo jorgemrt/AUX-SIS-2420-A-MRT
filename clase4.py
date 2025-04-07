@@ -89,3 +89,24 @@ mrt.agregar_nota(51)
 mrt.agregar_nota(52)
 print("Promedio:", mrt.promedio())  
 mrt.mostrar_informacion()
+#5. Clase Cuenta Bancaria
+class CuentaBanc:
+    def __init__(self, titular, saldo=0):
+        self.titular = titular
+        self.saldo = saldo
+    def depositar(self, monto):
+        self.saldo += monto
+        print(f"Depositado: {monto}")
+    def retirar(self, monto):
+        if monto > self.saldo:
+            print("Advertencia: Fondos insuficientes")
+        else:
+            self.saldo -= monto
+            print(f"Retirado: {monto}")
+    def mostrar_saldo(self):
+        print(f"Titular: {self.titular} - Saldo: {self.saldo}")
+cuenta = CuentaBanc("Mrt", 50)
+cuenta.depositar(100)
+cuenta.retirar(50)
+cuenta.retirar(10)
+cuenta.mostrar_saldo()
