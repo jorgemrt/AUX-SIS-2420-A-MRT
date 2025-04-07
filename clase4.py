@@ -1,10 +1,6 @@
 
 #1. Análisis de lista de números
-##Escribe un programa que pida al usuario una lista de números separados por comas y luego
-##calcule e imprima:
-#- La suma de todos los números.
-#- El número más grande y el más pequeño.
-#- Cuántos números son pares y cuántos son impares.
+
 entrada = input("ingrese numeros separados por una ( , ) que ser una lista")
 lista_texto = entrada.split(",")
 numeros = []
@@ -31,3 +27,32 @@ print("Número más grande:", mayor)
 print("Número más pequeño:", menor)
 print("Números pares:", pares)
 print("Números impares:", impares)
+
+# 2. Multiplicación de matrices
+
+def multmat(a, b):
+    if len(a[0]) != len(b):
+        return None
+
+    res = []
+    for i in range(len(a)):
+        fila = []
+        for j in range(len(b[0])):
+            s = 0
+            for k in range(len(b)):
+                s += a[i][k] * b[k][j]
+            fila.append(s)
+        res.append(fila)
+    return res
+
+a = [[6, 2], [7, 4]]
+b = [[4, 9], [7, 2]]
+
+r = multmat(a, b)
+
+if r is None:
+    print("No se puede multiplicar: dimensiones incompatibles.")
+else:
+    print("Resultado de la multiplicación:")
+    for f in r:
+        print(f)
