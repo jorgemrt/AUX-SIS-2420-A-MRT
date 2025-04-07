@@ -65,4 +65,27 @@ for i in range(len(mrt[0])):
         f.append(mrt[j][i])
     rt.append(f)
 print(rt)
- 
+ #4. Clase Estudiante con promedio
+class Estudiante:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.notas = []
+
+    def agregar_nota(self, nota):
+        self.notas.append(nota)
+
+    def promedio(self):
+        if self.notas:
+            return sum(self.notas) / len(self.notas)
+        return 0
+
+    def mostrar_informacion(self):
+        print(f"Nombre: {self.nombre}")
+        print(f"Notas: {self.notas}")
+        print(f"Promedio: {self.promedio():.2f}")
+
+mrt = Estudiante("Jorge_Mrt")
+mrt.agregar_nota(51)
+mrt.agregar_nota(52)
+print("Promedio:", mrt.promedio())  
+mrt.mostrar_informacion()
