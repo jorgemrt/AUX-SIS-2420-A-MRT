@@ -56,3 +56,13 @@ else:
     print("Resultado de la multiplicación:")
     for f in r:
         print(f)
+#3. Transpuesta de una matriz
+mrt = [[1, 2, 3], [4, 5, 6]]
+rt = []
+for i in range(len(mrt[0])):
+    f = []
+    for j in range(len(mrt)):
+        f.append(mrt[j][i])
+    rt.append(f)
+print(rt)
+ 
